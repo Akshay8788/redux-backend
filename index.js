@@ -25,7 +25,7 @@ app.get("/students", async (req, res) => {
 });
 
 app.post("/students", async (req, res) => {
-  const { name, age, grade } = req.body;
+  const { name, age, grade,gender } = req.body;
 
   try {
     const student = new Student({ name, age, grade,gender, });
