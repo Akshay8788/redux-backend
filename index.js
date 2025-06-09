@@ -60,9 +60,10 @@ app.put("/students/:id", async (req, res) => {
 
 app.delete("/students/:id", async (req, res) => {
   const studentId = req.params.id;
-
+  console.log(studentId)
+   
   try {
-    const deletedStudent = await Student.findByIdAndRemove(studentId);
+    const deletedStudent = await Student.findByIdAndDelete(studentId);
 
     if (!deletedStudent) {
       return res.status(404).json({ error: "Student not found" });
